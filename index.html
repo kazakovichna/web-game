@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.6.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.6.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.6.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.6.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.6.1/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+
+
+    <script src=ha"phaser.min.js"></script>
+
+    <script src="func_preload.js"></script>
+    <script src="func_create.js"></script>
+    <script src="func_update.js"></script>
+
+    <script src="other_func/func_collectStar.js"></script>
+    <script src="other_func/func_bombKill.js"></script>
+    <script src="other_func/func_boom.js"></script>
+    <script src="other_func/func_fire.js"></script>
+    <script src="other_func/func_hitBomb.js"></script>
+    <script src="other_func/func_enemy_fire.js"></script>
+    <script src="other_func/func_enem_kill.js"></script>
+    <script src="other_func/func_enemy_bull_kill.js"></script>
+
+  </head>
+  <body>
+
+  <script type="text/javascript">
+
+    var config = {
+      type: Phaser.WEBGL,
+      width: 1024,
+      height: 576,
+      physics: {
+        default: 'arcade',
+        arcade: {
+          gravity: { y: 600 },
+          debug: false
+        }
+      },
+      scene: {
+        preload: preload,
+        create: create,
+        update: update
+      }
+    };
+
+    var player;
+    var stars;
+    var bombs;
+    var platforms;
+    var grass;
+    var cursors;
+    var bullets;
+    var en_bullets;
+    var enemies;
+    var flip = true;
+    var score = 0;
+    var gameOver = false;
+    var scoreText;
+
+    var game = new Phaser.Game(config);
+
+  </script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+
+  <script>
+
+    // Get a reference to the database service
+    var database = firebase.database();
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDXH8uEcdF0lUlnxg5xg1Qj23zfaRHpaIM",
+      authDomain: "mazashib-faf91.firebaseapp.com",
+      databaseURL: "https://mazashib-faf91.firebaseio.com",
+      projectId: "mazashib-faf91",
+      storageBucket: "mazashib-faf91.appspot.com",
+      messagingSenderId: "513611654131",
+      appId: "1:513611654131:web:e6e51c92314d67b973e886",
+      measurementId: "G-Y1KFPE5E0K"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+  </body>
+</html>
